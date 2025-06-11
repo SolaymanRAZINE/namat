@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import QrScanner from "react-qr-barcode-scanner";
+import { Camera, X } from "lucide-react";
 
 export default function Page() {
   const [barcode, setBarcode] = useState<string | null>(null);
@@ -19,13 +20,13 @@ export default function Page() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center pt-10">
       <button
         type="button"
         onClick={handleToggleCamera}
-        className="p-2 rounded-full hover:bg-muted transition-colors border border-gray-400 mb-2"
+        className="p-2 rounded-full hover:bg-muted transition-colors border border-gray-400 mb-4"
       >
-        {isCameraOpen ? <div className="h-6 w-6 text-primary">X</div> : <div className="h-6 w-6 text-primary">Camera</div> }
+        {isCameraOpen ? <X className="h-6 w-6 text-primary" /> : <Camera className="h-6 w-6 text-primary" />}
       </button>
       {isCameraOpen && (
         <QrScanner
