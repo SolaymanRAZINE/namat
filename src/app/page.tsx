@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import QrScanner from "react-qr-barcode-scanner";
 
-export function CameraButton() {
+export default function Page() {
   const [barcode, setBarcode] = useState<string | null>(null);
   const [isCameraOpen, setIsCameraOpen] = useState(false);
 
